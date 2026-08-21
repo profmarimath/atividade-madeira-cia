@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção de Aniversário - Madeira e Cia Ltda.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Promoção de Aniversário 🎉🎉🎉 </h1>
+        <form action="processa.php" method="POST">
+            <label for="txtNome">Nome do cliente:</label>
+            <input type="text" id="txtNome" name="txtNome" required>
+
+            <label for="txtValorCompra">Valor da compra (R$):</label>
+            <input type="number" id="txtValorCompra" name="txtValorCompra" step="0.01" min="0" required>
+
+            <label for="cmbPag">Forma de pagamento:</label>
+            <select id="cmbPag" name="cmbPag" required>
+                <option value="">Selecione...</option>
+                <option value="deposito">Depósito (10% desconto)</option>
+                <option value="boleto">Boleto (8% desconto)</option>
+                <option value="cartaoCredito">Cartão de crédito (sem desconto)</option>
+            </select>
+
+            <button type="submit">Calcular Desconto</button>
+        </form>
+    </div>
+
+    <!--
+    COMENTÁRIO REFLEXIVO:
+    Neste formulário, criei um layout limpo e amigável usando HTML5 e CSS3.
+    O formulário coleta nome, valor da compra e forma de pagamento.
+    Usei cores suaves e bordas arredondadas para tornar a experiência mais agradável.
+    O campo de valor da compra aceita números decimais (step="0.01") para maior precisão.
+    A validação 'required' garante que todos os campos sejam preenchidos antes do envio.
+    O formulário envia os dados via POST para o arquivo processa.php.
+    -->
+</body>
+</html>
